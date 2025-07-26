@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Проекты</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @media (max-width: 768px) {
+            .tech-nav .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .tech-nav .nav-links.active {
+                display: flex;
+                flex-direction: column;
+            }
+            .tech-nav .nav-link, .tech-nav .header-main-btn {
+                padding: 15px;
+                text-align: center;
+            }
+            .projects-grid {
+                flex-direction: column;
+            }
+            .project-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .project-img img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Хэдер из главной страницы -->
+    <nav class="tech-nav">
+        <div class="nav-container">
+            <a href="index.html" class="header-main-btn">Михаил Семёнов</a>
+            <div class="nav-links">              
+                <a href="articles.html" class="nav-link nav-link-anim">Статьи</a>
+                <a href="projects.html" class="nav-link nav-link-anim nav-emphasis">Проекты</a>
+                <a href="#workplace" class="nav-link">Компании</a>
+                <a href="index.html#contacts" class="nav-link nav-link-anim">Контакты</a>
+            </div>
+            <div class="nav-toggle">☰</div>
+        </div>
+    </nav>
+    <!-- Контент страницы проектов -->
+    <header class="projects-header">
+        <h1 class="projects-title">Мои проекты</h1>
+        <div class="projects-subtitle">
+            Каждый проект - это шаг к более эффективному и современному бизнесу
+        </div>
+    </header>
+    <main class="projects-main">
+        <div class="projects-grid">
+            <!-- Проект 1 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/HR_bot.png" alt="HR-бот в Telegram">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">HR-бот в Telegram</h2>
+                    <p class="project-tagline">Автоматизация HR-процессов</p>
+                    <p class="project-desc">
+                        Интеллектуальный бот для автоматизации HR-процессов.
+                    </p>
+                    <div class="project-tags">
+                        <span class="lang-tag python">Python</span>
+                        <span class="lang-tag javascript">1C</span>
+                        <span class="lang-tag sql">SQL</span>
+                        <span class="lang-tag python">Telegram Bot API</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Проект 2 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/Time-Tracker.jpg" alt="Трекер времени «UseMyTime»">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">Трекер времени «UseMyTime»</h2>
+                    <p class="project-tagline">Управление проектами</p>
+                    <p class="project-desc">
+                        Система учета рабочего времени и управления проектами. Позволяет отслеживать время, затраченное на задачи, генерировать отчеты и анализировать эффективность работы команды.
+                    </p>
+                    <div class="project-tags">
+                        <span class="lang-tag javascript">React</span>
+                        <span class="lang-tag sql">MongoDB</span>
+                        <span class="lang-tag java">React Native</span>
+                        <span class="lang-tag nodejs">Node.js</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Проект 3 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/IT.jpg" alt="ИТ-регламенты">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">ИТ-регламенты</h2>
+                    <p class="project-tagline">Документооборот</p>
+                    <p class="project-desc">
+                        Комплексная система регламентов и процедур для ИТ-отдела.
+                    </p>
+                    <div class="project-tags">
+                        <span class="lang-tag python">Jira</span>
+                        <span class="lang-tag sql">Git</span>
+                        <span class="lang-tag python">ITIL</span>
+                        <span class="lang-tag javascript">Confluence</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Проект 4 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/OpenAI.png" alt="AI ChatGPT-боты">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">AI ChatGPT-боты</h2>
+                    <p class="project-tagline">Искусственный интеллект</p>
+                    <p class="project-desc">
+                        Интеллектуальные чат-боты на базе GPT для автоматизации клиентского сервиса, технической поддержки и внутренних бизнес-процессов компании.
+                    </p>
+                    <div class="project-tags">
+                        <span class="lang-tag python">Python</span>
+                        <span class="lang-tag java">Redis</span>
+                        <span class="lang-tag sql">FastAPI</span>
+                        <span class="lang-tag nodejs">OpenAI.API</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Проект 5 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/WEB.jpg" alt="Сайты компании">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">Сайты компании</h2>
+                    <p class="project-tagline">Веб-разработка</p>
+                    <p class="project-desc">
+                        Разработка и поддержка корпоративных веб-сайтов.
+                    </p>
+                    <div class="project-tags">                    
+                        <span class="lang-tag javascript">JavaScript</span>
+                        <span class="lang-tag python">WordPress</span>
+                        <span class="lang-tag cpp">PHP</span>
+                        <span class="lang-tag sql">MySQL</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Проект 6 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/bitrix.jpg" alt="Битрикс 24">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">Битрикс 24</h2>
+                    <p class="project-tagline">CRM и автоматизация</p>
+                    <p class="project-desc">
+                       Внедрение и настройка Битрикс24.
+                    </p>
+                    <div class="project-tags">
+                        <span class="lang-tag javascript">1С</span>
+                        <span class="lang-tag nodejs">Битрикс24</span>
+                        <span class="lang-tag cpp">REST API</span>
+                        <span class="lang-tag python">Webhooks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="tech-footer custom-footer">
+        <div class="footer-columns">
+            <div class="footer-col footer-col-left">
+                <h3>Михаил Семёнов</h3>
+                <div>Статьи</div>
+                <a href="#" class="footer-link">Проекты</a>
+            </div>
+            <div class="footer-col footer-col-right">
+                <h3>ООО НПП "ТЭК"</h3>
+                <div>Сайт &bull; <a href="https://npptec.ru" target="_blank" class="footer-link">https://npptec.ru</a></div>
+                <div>634040, Россия, г. Томск, ул. Высоцкого, д. 33</div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Smooth scrolling with redirect for navigation links
+        document.querySelectorAll('.nav-link, .header-main-btn').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    if (window.location.pathname !== '/index.html') {
+                        window.location.href = 'index.html' + href;
+                    } else {
+                        document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                    }
+                } else if (href === 'index.html#contacts') {
+                    e.preventDefault();
+                    if (window.location.pathname !== '/index.html') {
+                        window.location.href = href;
+                    } else {
+                        document.querySelector('#contacts').scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>

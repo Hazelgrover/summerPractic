@@ -10,6 +10,92 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .tech-nav .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .tech-nav .nav-links.active {
+                display: flex;
+                flex-direction: column;
+            }
+            .tech-nav .nav-link, .tech-nav .header-main-btn {
+                padding: 15px;
+                text-align: center;
+            }
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-image {
+                width: 100%;
+                height: 200px;
+            }
+            .workplace-features {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .workplace-features li {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .slider {
+                width: 100%;
+            }
+            .slider-slides, .slider-slide {
+                width: 100% !important;
+            }
+            .workplace-btn-container {
+                width: 100%;
+                text-align: center;
+            }
+            .workplace-btn-wide {
+                width: 90%;
+            }
+            .contacts-container {
+                flex-direction: column;
+            }
+            .contacts-info, .contacts-form {
+                width: 100%;
+            }
+            .contact-block {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .contact-block div {
+                margin-top: 5px;
+                width: 100%;
+            }
+            .work-hours-block {
+                width: 100%;
+            }
+            .work-hours-list {
+                text-align: left;
+                width: 100%;
+                padding: 0 5px;
+                box-sizing: border-box;
+            }
+            .work-hours-time {
+                display: inline;
+                white-space: normal;
+            }
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+            .cert-card {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Фиксированная навигация -->
@@ -17,9 +103,9 @@
         <div class="nav-container">
             <a href="#" class="header-main-btn">Михаил Семёнов</a>
             <div class="nav-links">
-                <a href="#articles" class="nav-link">Статьи</a>
-                <a href="#projects" class="nav-link">Проекты</a>
-                <a href="#companies" class="nav-link">Компании</a>
+                <a href="articles.html" class="nav-link">Статьи</a>
+                <a href="projects.html" class="nav-link">Проекты</a>
+                <a href="#workplace" class="nav-link">Компании</a>
                 <a href="#contacts" class="nav-link nav-emphasis">Связаться</a>
             </div>
             <div class="nav-toggle">☰</div>
@@ -81,11 +167,7 @@
             </div>
             <div class="slider">
                 <div class="slider-slides">
-                    <div class="slider-slide" style="background-image: url(https://img.hhcdn.ru/branding-pictures/1937304.png);"></div>
-                    <div class="slider-slide" style="background-image: url(https://obzor.city/data/images/news_2023/07/tek/1_1_.jpg);"></div>
                     <div class="slider-slide" style="background-image: url(https://рэмтэк.рф/upload/medialibrary/11f/w82e6dt1356o2iacy5f65kn14fv4es8q/IMG_38923.jpg);"></div>
-                    <div class="slider-slide" style="background-image: url(https://www.mikhailsemenov.com/wp-content/themes/MS-theme/img/TEK4.jpg);"></div>
-                    <div class="slider-slide" style="background-image: url(https://www.mikhailsemenov.com/wp-content/themes/MS-theme/img/TEK2.png);"></div>
                 </div>
                 <div class="slider-dots"></div>
             </div>
@@ -167,11 +249,11 @@
                             +7(3822) 999-784
                         </div>
                     </div>
-                    <div class="contact-block">
+                    <div class="contact-block" data-href="https://t.me/SemyonovMN">
                         <span>💬</span>
                         <div>
                             <strong>Telegram</strong><br>
-                            @SemyonovMN
+                            <span class="telegram-label">Связаться в Telegram</span>
                         </div>
                     </div>
                     <div class="contact-block work-hours-block">
@@ -193,7 +275,7 @@
                     </div>
                 </div>
                 <form class="contacts-form">
-                    <h3>Связаться со мной</h3>
+                    <h2>Связаться со мной</h2>
                     <input type="text" placeholder="Ваше имя" required>
                     <input type="email" placeholder="Ваш email" required>
                     <input type="text" placeholder="Тема сообщения">
@@ -366,6 +448,12 @@
         document.getElementById('cert-modal').onclick = function(e) {
             if (e.target === this) this.classList.remove('active');
         };
+
+        // Handle Telegram card click
+        document.querySelectorAll('.contact-block[data-href]').forEach(card => {
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open(this.getAttribute('data-href'), '_blank');
+            });
+        });
     </script>
-</body>
-</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Статьи и публикации</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @media (max-width: 768px) {
+            .tech-nav .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .tech-nav .nav-links.active {
+                display: flex;
+                flex-direction: column;
+            }
+            .tech-nav .nav-link, .tech-nav .header-main-btn {
+                padding: 15px;
+                text-align: center;
+            }
+            .articles-list {
+                flex-direction: column;
+            }
+            .article-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .article-img img {
+                width: 100%;
+                height: auto;
+            }
+            .articles-nav {
+                flex-direction: column;
+            }
+            .articles-search {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .articles-tags {
+                flex-wrap: wrap;
+            }
+            .tag-btn {
+                margin: 5px;
+                padding: 5px 10px;
+            }
+            .article-modal-content {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Хэдер из главной страницы -->
+    <nav class="tech-nav">
+        <div class="nav-container">
+            <a href="index.html" class="header-main-btn">Михаил Семёнов</a>
+            <div class="nav-links">
+                <a href="articles.html" class="nav-link nav-link-anim nav-emphasis">Статьи</a>
+                <a href="projects.html" class="nav-link nav-link-anim">Проекты</a>
+                <a href="#workplace" class="nav-link">Компании</a>
+                <a href="index.html#contacts" class="nav-link nav-link-anim">Контакты</a>
+            </div>
+            <div class="nav-toggle">☰</div>
+        </div>
+    </nav>
+    <!-- Далее ваш контент страницы статей -->
+    <header class="articles-header">
+        <h1 class="articles-title">Статьи и публикации</h1>
+        <div class="articles-subtitle">
+            Делюсь опытом в области IT-управления, цифровизации бизнеса и внедрения современных технологий
+        </div>
+    </header>
+    <nav class="articles-nav">
+        <input type="text" class="articles-search" placeholder="🔍 Поиск по статьям…" id="articleSearch">
+        <div class="articles-tags">
+            <button class="tag-btn active" data-tag="all">Все статьи</button>
+            <button class="tag-btn" data-tag="Цифровизация">Цифровизация</button>
+            <button class="tag-btn" data-tag="IT-управление">IT-управление</button>
+            <button class="tag-btn" data-tag="Автоматизация">Автоматизация</button>
+            <button class="tag-btn" data-tag="ERP-системы">ERP-системы</button>
+        </div>
+    </nav>
+    <main class="articles-main">
+        <div class="articles-list">
+            <!-- Главная статья -->
+            <div class="article-card" data-article-id="1" data-tag="Цифровизация">
+                <div class="article-img">
+                    <span class="article-label yellow">Цифровизация</span>
+                    <span class="article-label green">Рекомендуемое</span>
+                    <img src="images/article.jpeg" alt="Томское предприятие в тренде цифровизации">
+                </div>
+                <div class="article-content">
+                    <h2 class="article-title">Томское предприятие в тренде цифровизации</h2>
+                    <p class="article-desc">
+                        2 марта 2022 года Президент РФ подписал Указ № 83, направленный на ускоренное развитие IT-отрасли. НПП «Томская электронная компания» (ТЭК) активно внедряет цифровые технологии.
+                    </p>
+                    <div class="article-meta">
+                        <span>6 марта 2022</span>
+                        <span>•</span>
+                        <span>3 мин чтения</span>
+                    </div>
+                    <button class="article-read-btn" onclick="openArticleModal(1)">Читать полностью</button>
+                </div>
+            </div>
+            <!-- Статья 2 -->
+            <div class="article-card" data-article-id="2" data-tag="Автоматизация">
+                <div class="article-img">
+                    <span class="article-label yellow">Автоматизация</span>
+                    <img src="images/vnedrila.png" alt="Автоматизация бизнеса">
+                </div>
+                <div class="article-content">
+                    <h2 class="article-title">«Томская Электронная Компания» внедрила около тридцати решений в сфере цифровизации бизнеса</h2>
+                    <p class="article-desc">
+                        Специалисты отдела информационно-технического обеспечения предприятия используют около 30 систем электронной отчетности и различных цифровых сервисов.
+                    </p>
+                    <div class="article-meta">
+                        <span>4 марта 2022</span>
+                        <span>•</span>
+                        <span>4 мин чтения</span>
+                    </div>
+                    <button class="article-read-btn" onclick="openArticleModal(2)">Читать полностью</button>
+                </div>
+            </div>
+            <!-- Статья 3 -->
+            <div class="article-card" data-article-id="3" data-tag="IT-управление">
+                <div class="article-img">
+                    <span class="article-label yellow">IT-управление</span>
+                    <img src="images/softline.png" alt="Enterprise Agreement">
+                </div>
+                <div class="article-content">
+                    <h2 class="article-title">Softline и Microsoft заключили соглашение Enterprise Agreement с ООО НПП ТЭК</h2>
+                    <p class="article-desc">
+                        Softline в Томске заключила с НПП «Томская электронная компания» соглашение Microsoft Enterprise Agreement на поставку ПО.
+                    </p>
+                    <div class="article-meta">
+                        <span>30 июля 2012</span>
+                        <span>•</span>
+                        <span>6 мин чтения</span>
+                    </div>
+                    <button class="article-read-btn" onclick="openArticleModal(3)">Читать полностью</button>
+                </div>
+            </div>
+            <!-- Статья 4 -->
+            <div class="article-card" data-article-id="4" data-tag="ERP-системы">
+                <div class="article-img">
+                    <span class="article-label yellow">ERP-системы</span>
+                    <img src="images/MS-DAX.jpg" alt="ERP-системы">
+                </div>
+                <div class="article-content">
+                    <h2 class="article-title">НПП «Томская электронная компания» и «Утилекс АйТи» подводят итоги первого этапа внедрения ERP-системы</h2>
+                    <p class="article-desc">
+                        НПП «ТЭК» и «Утилекс АйТи» завершили первый этап внедрения Microsoft Dynamics AX.
+                    </p>
+                    <div class="article-meta">
+                        <span>27 февраля 2009</span>
+                        <span>•</span>
+                        <span>5 мин чтения</span>
+                    </div>
+                    <button class="article-read-btn" onclick="openArticleModal(4)">Читать полностью</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Modal for article content -->
+    <div class="article-modal" id="articleModal">
+        <div class="article-modal-content">
+            <button class="article-modal-close" onclick="closeArticleModal()">×</button>
+            <div class="article-modal-body" id="articleModalBody"></div>
+        </div>
+    </div>
+    <script>
+        // Article data with placeholder additional text and image
+        const articlesData = {
+            1: {
+                title: "Томское предприятие в тренде цифровизации",
+                desc: "2 марта 2022 года Президент РФ подписал Указ № 83, направленный на ускоренное развитие IT-отрасли. НПП «Томская электронная компания» (ТЭК) активно внедряет цифровые технологии.",
+                additionalText: "Это дополнительный текст для статьи. НПП «Томская электронная компания» активно работает над внедрением передовых цифровых решений, включая автоматизацию процессов и интеграцию современных IT-систем. В рамках указа Президента, компания планирует увеличить инвестиции в цифровизацию на 20% в следующем году.",
+                image: "images/article.jpeg",
+                alt: "Томское предприятие в тренде цифровизации"
+            },
+            2: {
+                title: "«Томская Электронная Компания» внедрила около тридцати решений в сфере цифровизации бизнеса",
+                desc: "Специалисты отдела информационно-технического обеспечения предприятия используют около 30 систем электронной отчетности и различных цифровых сервисов.",
+                additionalText: "Этот дополнительный текст описывает детали внедрения. Компания успешно интегрировала системы для оптимизации бизнес-процессов, включая облачные решения и аналитические платформы, что позволило сократить операционные расходы на 15%.",
+                image: "images/vnedrila.png",
+                alt: "Автоматизация бизнеса"
+            },
+            3: {
+                title: "Softline и Microsoft заключили соглашение Enterprise Agreement с ООО НПП ТЭК",
+                desc: "Softline в Томске заключила с НПП «Томская электронная компания» соглашение Microsoft Enterprise Agreement на поставку ПО.",
+                additionalText: "Дополнительная информация: Соглашение позволило компании получить доступ к новейшим продуктам Microsoft, что значительно улучшило управление IT-инфраструктурой и повысило производительность сотрудников.",
+                image: "images/softline.png",
+                alt: "Enterprise Agreement"
+            },
+            4: {
+                title: "НПП «Томская электронная компания» и «Утилекс АйТи» подводят итоги первого этапа внедрения ERP-системы",
+                desc: "НПП «ТЭК» и «Утилекс АйТи» завершили первый этап внедрения Microsoft Dynamics AX.",
+                additionalText: "Подробности внедрения: Первый этап включал настройку модулей учета и управления производством, что позволило сократить время обработки заказов на 25%. В дальнейшем планируется интеграция модулей для управления цепочками поставок.",
+                image: "images/MS-DAX.jpg",
+                alt: "ERP-системы"
+            }
+        };
+
+        function openArticleModal(articleId) {
+            const article = articlesData[articleId];
+            if (article) {
+                const modalBody = document.getElementById('articleModalBody');
+                modalBody.innerHTML = `
+                    <img src="${article.image}" alt="${article.alt}" class="article-modal-img">
+                    <h2 class="article-title">${article.title}</h2>
+                    <p class="article-desc">${article.desc}</p>
+                    <p class="article-additional">${article.additionalText}</p>
+                `;
+                document.getElementById('articleModal').classList.add('active');
+            }
+        }
+
+        function closeArticleModal() {
+            document.getElementById('articleModal').classList.remove('active');
+        }
+
+        // Close modal when clicking outside the content
+        document.getElementById('articleModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeArticleModal();
+            }
+        });
+
+        // Filter functionality for tags
+        document.querySelectorAll('.tag-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.tag-btn').forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                const tag = this.getAttribute('data-tag');
+                const articles = document.querySelectorAll('.article-card');
+                const searchInput = document.getElementById('articleSearch').value.trim().toLowerCase();
+
+                articles.forEach(article => {
+                    const articleTag = article.getAttribute('data-tag');
+                    const articleTitle = article.querySelector('.article-title').textContent.toLowerCase();
+                    const matchesTag = tag === 'all' || articleTag === tag;
+                    const matchesSearch = searchInput === '' || articleTitle.includes(searchInput);
+
+                    article.style.display = matchesTag && matchesSearch ? 'flex' : 'none';
+                });
+            });
+        });
+
+        // Search functionality
+        document.getElementById('articleSearch').addEventListener('input', function() {
+            const searchTerm = this.value.trim().toLowerCase();
+            const activeTag = document.querySelector('.tag-btn.active').getAttribute('data-tag');
+            const articles = document.querySelectorAll('.article-card');
+
+            articles.forEach(article => {
+                const articleTag = article.getAttribute('data-tag');
+                const articleTitle = article.querySelector('.article-title').textContent.toLowerCase();
+                const matchesTag = activeTag === 'all' || articleTag === activeTag;
+                const matchesSearch = searchTerm === '' || articleTitle.includes(searchTerm);
+
+                article.style.display = matchesTag && matchesSearch ? 'flex' : 'none';
+            });
+        });
+
+        // Smooth scrolling with redirect for navigation links
+        document.querySelectorAll('.nav-link, .header-main-btn').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    if (window.location.pathname !== '/index.html') {
+                        window.location.href = 'index.html' + href;
+                    } else {
+                        document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                    }
+                } else if (href === 'index.html#contacts') {
+                    e.preventDefault();
+                    if (window.location.pathname !== '/index.html') {
+                        window.location.href = href;
+                    } else {
+                        document.querySelector('#contacts').scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+    <footer class="tech-footer custom-footer">
+        <div class="footer-columns">
+            <div class="footer-col footer-col-left">
+                <h3>Михаил Семёнов</h3>
+                <div>Статьи</div>
+                <a href="#" class="footer-link">Проекты</a>
+            </div>
+            <div class="footer-col footer-col-right">
+                <h3>ООО НПП "ТЭК"</h3>
+                <div>Сайт &bull; <a href="https://npptec.ru" target="_blank" class="footer-link">https://npptec.ru</a></div>
+                <div>634040, Россия, г. Томск, ул. Высоцкого, д. 33</div>
+            </div>
+        </div>
+    </footer>
